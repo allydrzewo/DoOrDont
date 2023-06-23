@@ -82,25 +82,24 @@ public class Main {
     //Prompt user to choose a level 
     public static void askLevel(String player)
     {
-         System.out.println("\n\n"+player+", enter a prompt level: ");
-      try{
-        int choice = scan.nextInt(); 
-        if(choice==1){
+        System.out.println("\n\n"+player+", enter a prompt level: ");
+        String choice = scan.nextLine(); 
+        if(choice.equals("1")){
              getPrompt(prompts1,player);
          }
-         else if(choice==2){
+         else if(choice.equals("2")){
              getPrompt(prompts2,player);
          }
-         else{
+         else if(choice.equals("3")){
              getPrompt(prompts3,player);
          }
-      }
-      //Catches error if user does not input acceptable value
-      catch (InputMismatchException e){
-        System.out.println("Enter either 1, 2, or 3");
-        scan.nextLine();
-        askLevel(player);
-      }
+         else if(choice.equals("end")){
+             clearAll();
+         }
+         else{
+            System.out.println("Enter either 1, 2, 3, or end");
+            askLevel(player);
+          }
     }
     
     public static void getPrompt(ArrayList promptList, String player)
@@ -110,7 +109,6 @@ public class Main {
         System.out.println(promptList.get(promptList.size()-1));
         promptList.remove(promptList.size()-1);
         System.out.println("\n                 +++ DO +++    or    +++ DRINK +++\n");
-        scan.nextLine();
         askChoice(player);
       }
       //Catches error for when the given list runs out of prompts
@@ -153,9 +151,7 @@ public class Main {
       //clears all Arraylists
       else if (answer.equals("end"))
       {
-        prompts1.clear();
-        prompts2.clear();
-        prompts3.clear();
+        clearAll();
       }
       else
       {
@@ -164,11 +160,16 @@ public class Main {
         askChoice(player);
       }
     }
+  public static void clearAll(){
+    prompts1.clear();
+    prompts2.clear();
+    prompts3.clear();
+  }
     //Ends game when called
-    //Lets players know the winner before terminating the program
-    public static void endOfGame()
+    //Lets players know the winner before terminating the program  
+  public static void endOfGame()
     {
-      System.out.println("\n~END OF GAME~\nSCORES: \n\t"+player1+" has "+pt1+" points");
+      System.out.println("\n\n\n\nEND OF GAME\n----------------------------------------------------------------------\nthank you for playing do or drink don't be too upset about the scores\n\nSCORES: \n\t"+player1+" has "+pt1+" points");
       System.out.println("\t"+player2+" has "+pt2+" points");
         if (pt2<pt1)
         {
