@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) throws Exception
     {
         System.out.println("\n\n\n\n\n\n......................................................................\n----------------------------------------------------------------------\n");
-        System.out.println("WELCOME TO DO OR D\nIt's a game for couples! You can pick intensity level of each prompt you receive. \nThe options are: do what the prompt says or drink. Pretty simple. You get points for however many you complete successfully.\nPress [enter] to begin the game\n");
+        System.out.println("WELCOME TO DO OR D\nIt's a game for couples! You can pick intensity level of each prompt you receive. \nThe options are: do what the prompt says or skip. Pretty simple. You get points for however many you complete successfully.\nPress [enter] to begin the game\n");
         System.out.println("----------------------------------------------------------------------\n......................................................................");
         String input = scan.nextLine();
         System.out.println();
@@ -64,7 +64,7 @@ public class Main {
         Collections.shuffle(prompts2);
         Collections.shuffle(prompts3);
         
-        System.out.println("\nGreat! The game has different levels of risque prompts 1 being lowest intensity and 3 being the highest.\nHere is what you should enter into the command line:\n\t[o]    to accept the card\n\t[i]    to drink\n\t[end]  to end the game\n----------------------------------------------------------------------");
+        System.out.println("\nGreat! The game has different levels of risque prompts 1 being lowest intensity and 3 being the highest.\nHere is what you should enter into the command line:\n\t[o]    to accept the card\n\t[i]    to skip\n\t[end]  to end the game\n----------------------------------------------------------------------");
      
       //While loop to continue the game until all Arraylists (total of 3) are empty
       while(!prompts1.isEmpty() || !prompts2.isEmpty() || !prompts3.isEmpty())  
@@ -108,7 +108,7 @@ public class Main {
       try{
         System.out.println(promptList.get(promptList.size()-1));
         promptList.remove(promptList.size()-1);
-        System.out.println("\n                 +++ DO +++    or    +++ DRINK +++\n");
+        System.out.println("\n                 +++ DO +++    or    +++ DON'T +++\n");
         askChoice(player);
       }
       //Catches error for when the given list runs out of prompts
@@ -119,7 +119,7 @@ public class Main {
         turn++;
       }
     }
-    //Waits for input of user to choose DO or DRINK
+    //Waits for input of user to choose DO or DON'T
     public static void askChoice(String player)
     {
       System.out.println("CHOICE: ");
@@ -169,7 +169,7 @@ public class Main {
     //Lets players know the winner before terminating the program  
   public static void endOfGame()
     {
-      System.out.println("\n\n\n\nEND OF GAME\n----------------------------------------------------------------------\nthank you for playing do or drink don't be too upset about the scores\n\nSCORES: \n\t"+player1+" has "+pt1+" points");
+      System.out.println("\n\n\n\nEND OF GAME\n----------------------------------------------------------------------\nthank you for playing do or don't! don't be too upset about the scores\n\nSCORES: \n\t"+player1+" has "+pt1+" points");
       System.out.println("\t"+player2+" has "+pt2+" points");
         if (pt2<pt1)
         {
