@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) throws Exception
     {
         System.out.println("\n\n\n\n\n\n......................................................................\n----------------------------------------------------------------------\n");
-        System.out.println("WELCOME TO DO OR DRINK\nIt's a game for couples! You can pick intensity level of each prompt you receive. \nThe options are: do what the prompt says or drink. Pretty simple. You get points for however many you complete successfully.\nPress [enter] to begin the game\n");
+        System.out.println("WELCOME TO DO OR D\nIt's a game for couples! You can pick intensity level of each prompt you receive. \nThe options are: do what the prompt says or drink. Pretty simple. You get points for however many you complete successfully.\nPress [enter] to begin the game\n");
         System.out.println("----------------------------------------------------------------------\n......................................................................");
         String input = scan.nextLine();
         System.out.println();
